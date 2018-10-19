@@ -64,7 +64,7 @@
               </v-card-actions>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                이곳이 처음인가요? <v-btn flat color="primary" href="/#/register">회원가입</v-btn>
+                이곳이 처음인가요? <v-btn flat color="primary" @click="regist">회원가입</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -141,6 +141,9 @@
           timer: 2000
         })
       },
+      regist () {
+        window.location.hash = '/register'
+      },
       submit () {
         this.$validator.validateAll()
           .then((vr) => {
@@ -159,7 +162,8 @@
             return this.swalSuccess('로그인 되었습니다. 메인페이지로 이동합니다')
           })
           .then(() => {
-            location.href = '/#/'
+            window.location.hash = '/'
+            // location.href = '/'
           })
           .catch((err) => {
             this.swalError(err.message)

@@ -150,7 +150,7 @@
 
                   <v-card-actions>
                     <v-spacer></v-spacer>
-                    이미 회원이신가요? <v-btn flat color="primary" href="/#/sign">로그인페이지</v-btn>
+                    이미 회원이신가요? <v-btn flat color="primary" @click="sign">로그인페이지</v-btn>
                   </v-card-actions>
                 </v-form>
               </v-card-text>
@@ -265,6 +265,9 @@
           text: msg,
           timer: 2000
         })
+      },
+      sign () {
+        window.location.hash = '/sign'
       },
       submit () {
         this.$validator.validateAll()

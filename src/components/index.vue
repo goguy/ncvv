@@ -162,6 +162,42 @@
               }
             }
           ]
+        },
+        {
+          action: 'developer_board',
+          title: 'cordova-plugin',
+          items: [
+            {
+              title: 'vibration',
+              to: {
+                path: '/Vibration'
+              }
+            },
+            {
+              title: 'flash',
+              to: {
+                path: '/Flash'
+              }
+            },
+            {
+              title: 'camera',
+              to: {
+                path: '/Camera'
+              }
+            },
+            {
+              title: 'nfc',
+              to: {
+                path: '/Nfc'
+              }
+            },
+            {
+              title: 'localisation',
+              to: {
+                path: '/Localisation'
+              }
+            }
+          ]
         }
       ],
       menus: [
@@ -200,14 +236,16 @@
         })
       },
       info () {
-        location.href = '/#/userModify'
+        location.hash = '/userModify'
+        // location.href = '/#/userModify'
       },
       signout () {
         this.$cookie.delete('token')
         // this.swalSuccess('로그아웃 되었습니다')
         return this.swalSuccess('로그아웃 되었습니다')
           .then(() => {
-            location.href = '/#/sign'
+            location.hash = '/sign'
+            // location.href = '/#/sign'
             // setTimeout(() => { location.href = '/#/sign' })
             // setTimeout(() => {
             //   location.href = '/#/sign'

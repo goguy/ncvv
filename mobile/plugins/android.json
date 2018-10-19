@@ -1,0 +1,39 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.yullin.ncvv"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.yullin.ncvv"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.yullin.ncvv"
+    },
+    "cordova-plugin-flashlight": {
+      "PACKAGE_NAME": "com.yullin.ncvv"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.yullin.ncvv"
+    },
+    "cordova-plugin-headercolor": {
+      "PACKAGE_NAME": "com.yullin.ncvv"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.yullin.ncvv"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.yullin.ncvv"
+    },
+    "phonegap-nfc": {
+      "PACKAGE_NAME": "com.yullin.ncvv"
+    }
+  },
+  "dependent_plugins": {}
+}

@@ -14,6 +14,11 @@ import qna from '@/components/board/qna'
 import talk from '@/components/board/talk'
 import HelloWorld from '@/components/test/HelloWorld'
 import test from '@/components/test/test'
+import Vibration from '@/components/plugin/Vibration'
+import Flash from '@/components/plugin/Flash'
+import Camera from '@/components/plugin/Camera'
+import Nfc from '@/components/plugin/Nfc'
+import Localisation from '@/components/plugin/Localisation'
 import cfg from '../../static/cfg'
 
 Vue.use(Router)
@@ -109,6 +114,36 @@ export default new Router({
           path: '/test',
           name: 'test',
           component: test,
+          beforeEnter: checkAuth
+        },
+        {
+          path: '/vibration',
+          name: 'Vibration',
+          component: Vibration,
+          beforeEnter: checkAuth
+        },
+        {
+          path: '/flash',
+          name: 'Flash',
+          component: Flash,
+          beforeEnter: checkAuth
+        },
+        {
+          path: '/camera',
+          name: 'Camera',
+          component: Camera,
+          beforeEnter: checkAuth
+        },
+        {
+          path: '/nfc',
+          name: 'Nfc',
+          component: Nfc,
+          beforeEnter: checkAuth
+        },
+        {
+          path: '/localisation',
+          name: 'Localisation',
+          component: Localisation,
           beforeEnter: checkAuth
         }
       ]

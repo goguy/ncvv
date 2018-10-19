@@ -16,6 +16,7 @@ import App from './App'
 import router from './router'
 import '../node_modules/vuetify/dist/vuetify.min.css'
 import '../node_modules/vue-wysiwyg/dist/vueWysiwyg.css'
+import {i18n} from './i18n'
 
 moment.locale('ko')
 
@@ -63,6 +64,7 @@ Vue.prototype.$user = {
   email: ''
 }
 
+require('vuetify/dist/vuetify.min.css')
 Vue.use(Vuetify)
 Vue.use(VeeValidate)
 Vue.use(VueGoogleMaps, {
@@ -86,12 +88,24 @@ Vue.use(wysiwyg, {
 })
 // Vue.use(VueLodash, {});
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 
 /* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+const init = () => {
+  new Vue({
+    el: '#app',
+    router,
+    i18n,
+    components: { App },
+    template: '<App/>'
+  })
+}
+// Wait for the deviceready event to start the render
+document.addEventListener('deviceready', () => {
+  console.log('Ready, Render the App')
+  init()
 })
+
+// If we are not in Cordova, manually trigger the deviceready event
+const isCordovaApp = (typeof window.cordova !== 'undefined')
+if (!isCordovaApp) document.dispatchEvent(new CustomEvent('deviceready', {}))
